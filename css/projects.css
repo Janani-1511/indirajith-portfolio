@@ -1,224 +1,15 @@
 /* ==========================================================================
-   PROJECT DETAILS & SHOWCASE STYLES
-   Aesthetic: Elegant Beige & Cream — Premium Editorial
+   PROJECT DETAILS & MODAL SHOWCASE STYLES
+   Theme: High-Tech Cyber Dark & Glowing Neon
    ========================================================================== */
-
-.project-detail-hero {
-  padding-top: 150px;
-  padding-bottom: 70px;
-  background-color: var(--bg-beige);
-  border-bottom: 1px solid var(--border-taupe);
-}
-
-.back-nav-bar {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-brown);
-  margin-bottom: 32px;
-  transition: transform var(--transition-fast), color var(--transition-fast);
-}
-
-.back-nav-bar:hover {
-  color: var(--text-charcoal);
-  transform: translateX(-4px);
-}
-
-.project-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 12px;
-  background-color: var(--bg-ivory);
-  border: 1px solid var(--border-taupe);
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-olive-dark);
-  margin-bottom: 20px;
-}
-
-.project-hero-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
-  font-weight: 500;
-  color: var(--text-charcoal);
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-
-.project-hero-subtitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--accent-brown-dark);
-  max-width: 800px;
-  line-height: 1.5;
-  margin-bottom: 24px;
-}
-
-.project-hero-lead {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  max-width: 840px;
-  line-height: 1.8;
-  margin-bottom: 36px;
-}
-
-/* Metadata Bar */
-.project-meta-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border-taupe);
-}
-
-.meta-block small {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent-brown);
-  margin-bottom: 4px;
-}
-
-.meta-block strong {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  color: var(--text-charcoal);
-}
-
-/* Detail Section Grid */
-.detail-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-  margin-top: 60px;
-}
-
-.detail-main {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-.detail-article-block {
-  background-color: #FFFFFF;
-  border: 1px solid var(--border-taupe);
-  border-radius: var(--radius-sm);
-  padding: 36px 32px;
-  box-shadow: var(--shadow-subtle);
-}
-
-.detail-article-block h3 {
-  font-family: var(--font-serif);
-  font-size: 1.55rem;
-  font-weight: 600;
-  color: var(--text-charcoal);
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.detail-article-block p {
-  font-size: 0.98rem;
-  color: var(--text-muted);
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
-
-.detail-article-block p:last-child {
-  margin-bottom: 0;
-}
-
-/* Architectural Box Display */
-.architecture-flow {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.arch-node {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-taupe);
-  border-radius: var(--radius-sm);
-  padding: 20px 16px;
-  text-align: center;
-}
-
-.arch-node-num {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--accent-brown);
-  margin-bottom: 6px;
-}
-
-.arch-node-title {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--text-charcoal);
-  margin-bottom: 6px;
-}
-
-.arch-node-text {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-/* Detail Sidebar */
-.detail-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.sidebar-widget {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-taupe);
-  border-radius: var(--radius-sm);
-  padding: 28px 24px;
-}
-
-.widget-title {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--text-charcoal);
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.widget-tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.widget-action-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-}
 
 /* Modal Popup System for Project Showcase */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(37, 35, 31, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(4, 7, 13, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -235,10 +26,10 @@
 }
 
 .modal-content {
-  background-color: var(--bg-ivory);
-  border: 1px solid var(--border-taupe);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-elevated);
+  background-color: #0A101D;
+  border: 1px solid var(--neon-cyan);
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 50px rgba(0, 240, 255, 0.35), var(--shadow-elevated);
   width: 100%;
   max-width: 760px;
   max-height: 88vh;
@@ -257,41 +48,27 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-taupe);
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-neon);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  color: var(--text-charcoal);
+  font-size: 1.3rem;
+  color: var(--neon-cyan);
   transition: all var(--transition-fast);
 }
 
 .modal-close-btn:hover {
-  background-color: var(--text-charcoal);
-  color: #FFFFFF;
-}
-
-@media (max-width: 900px) {
-  .project-meta-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .detail-grid {
-    grid-template-columns: 1fr;
-  }
-  .architecture-flow {
-    grid-template-columns: 1fr;
-  }
+  background-color: var(--neon-cyan);
+  color: #070B14;
+  box-shadow: 0 0 15px var(--neon-cyan-glow);
 }
 
 @media (max-width: 600px) {
-  .project-meta-strip {
-    grid-template-columns: 1fr;
-  }
   .modal-content {
     padding: 28px 20px;
   }

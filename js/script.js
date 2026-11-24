@@ -1,6 +1,6 @@
 /**
  * INDIRAJITH T B — Personal Portfolio Script
- * Vanilla JavaScript Implementation
+ * High-Tech Cyber Dark & Glowing Neon Interactivity
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,6 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentYearEl = document.getElementById('currentYear');
   if (currentYearEl) {
     currentYearEl.textContent = new Date().getFullYear();
+  }
+
+  // --- Ambient Cursor Glow Follower ---
+  const cursorGlow = document.getElementById('cursorGlow');
+  if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currentX = mouseX;
+    let currentY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    const animateCursor = () => {
+      currentX += (mouseX - currentX) * 0.12;
+      currentY += (mouseY - currentY) * 0.12;
+      cursorGlow.style.left = `${currentX}px`;
+      cursorGlow.style.top = `${currentY}px`;
+      requestAnimationFrame(animateCursor);
+    };
+    animateCursor();
   }
 
   // --- Header Sticky Behavior & Scroll Spy ---
@@ -106,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     reveals.forEach((el) => revealObserver.observe(el));
   } else {
-    // Fallback for older browsers
     reveals.forEach((el) => el.classList.add('visible'));
   }
 
@@ -121,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Project Modal Popup System ---
+  // --- Project Modal Popup System (Dark & Neon) ---
   const projectModal = document.getElementById('projectModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalBody = document.getElementById('modalBody');
@@ -179,23 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
       outcome:
         'Praised by symposium judges for robust live command recognition, real-time peripheral control, and polished system responsiveness.',
     },
-    hallhive: {
-      title: 'Hall Hive & API Monitoring System',
-      subtitle: 'Institutional Space Scheduling & API Uptime Telemetry',
-      category: 'Full-Stack Web Development',
-      year: '2025',
-      summary:
-        'A dual suite of productivity platforms: Hall Hive provides automated seminar hall reservation and conflict resolution, while the API Monitoring System continuously inspects endpoint availability, response latency, and operational health.',
-      features: [
-        'Interactive calendar-based hall availability tracker preventing overlapping departmental bookings.',
-        'Automated approval routing with instant reservation status updates for staff and students.',
-        'API health inspection pinging critical endpoints and recording response latencies.',
-        'Intuitive reporting dashboard with historical uptime percentages and error logs.',
-      ],
-      tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'SQL Database', 'RESTful API Testing', 'Uptime Metrics'],
-      outcome:
-        'Eliminated manual paper scheduling for institutional event halls and provided clear, actionable latency diagnostics for web services.',
-    },
   };
 
   const openModal = (projectId) => {
@@ -204,30 +209,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalBody.innerHTML = `
       <div style="margin-bottom: 24px;">
-        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-brown); margin-bottom: 6px;">
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--neon-cyan); margin-bottom: 8px; text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);">
           ${data.category} &middot; ${data.year}
         </div>
-        <h2 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 600; color: var(--text-charcoal); line-height: 1.2; margin-bottom: 6px;">
+        <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-bottom: 6px;">
           ${data.title}
         </h2>
-        <p style="font-size: 0.95rem; font-weight: 600; color: var(--accent-olive-dark);">
+        <p style="font-family: var(--font-mono); font-size: 0.95rem; font-weight: 600; color: var(--neon-purple); text-shadow: 0 0 8px rgba(176, 38, 255, 0.3);">
           ${data.subtitle}
         </p>
       </div>
 
-      <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border-light);">
+      <div style="font-size: 0.98rem; color: #94A3B8; line-height: 1.8; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
         ${data.summary}
       </div>
 
-      <h4 style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--text-charcoal); margin-bottom: 12px;">
+      <h4 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">
         Key Architectural Features
       </h4>
-      <ul style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
+      <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
         ${data.features
           .map(
             (feat) => `
-          <li style="display: flex; gap: 10px; font-size: 0.9rem; color: var(--text-charcoal); line-height: 1.6;">
-            <span style="color: var(--accent-olive); font-weight: 700;">&mdash;</span>
+          <li style="display: flex; gap: 10px; font-size: 0.9rem; color: #E2E8F0; line-height: 1.6;">
+            <span style="color: var(--neon-cyan); font-weight: 700; text-shadow: 0 0 6px var(--neon-cyan);">&#9657;</span>
             <span>${feat}</span>
           </li>
         `
@@ -235,14 +240,14 @@ document.addEventListener('DOMContentLoaded', () => {
           .join('')}
       </ul>
 
-      <h4 style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--text-charcoal); margin-bottom: 12px;">
+      <h4 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">
         Technologies &amp; Frameworks
       </h4>
-      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
         ${data.tech
           .map(
             (t) => `
-          <span style="font-size: 0.78rem; font-weight: 500; padding: 4px 10px; background-color: var(--bg-card); border: 1px solid var(--border-taupe); border-radius: var(--radius-sm); color: var(--text-charcoal);">
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600; padding: 5px 12px; background-color: rgba(7, 11, 20, 0.9); border: 1px solid var(--border-neon); border-radius: var(--radius-sm); color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);">
             ${t}
           </span>
         `
@@ -250,9 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
           .join('')}
       </div>
 
-      <div style="background-color: var(--bg-beige); border: 1px solid var(--border-taupe); border-radius: var(--radius-sm); padding: 16px 20px;">
-        <small style="display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-brown); margin-bottom: 4px;">Project Impact &amp; Results</small>
-        <p style="font-size: 0.88rem; color: var(--text-charcoal); line-height: 1.6; margin: 0;">${data.outcome}</p>
+      <div style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(20, 15, 42, 0.9) 100%); border: 1px solid var(--neon-purple); border-radius: var(--radius-sm); padding: 18px 22px; box-shadow: 0 0 20px rgba(176, 38, 255, 0.2);">
+        <small style="display: block; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--neon-cyan); margin-bottom: 6px;">Project Impact &amp; Results</small>
+        <p style="font-size: 0.9rem; color: #CBD5E1; line-height: 1.6; margin: 0;">${data.outcome}</p>
       </div>
     `;
 
@@ -329,12 +334,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Simulate sending state
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending message...';
+        submitBtn.innerHTML = 'Transmitting packet...';
       }
 
       setTimeout(() => {
         formStatus.className = 'form-status success';
-        formStatus.textContent = `Thank you, ${name}! Your message regarding "${subject}" has been received. Indirajith will contact you at ${email} shortly.`;
+        formStatus.textContent = `Transmission confirmed, ${name}! Your dispatch regarding "${subject}" has been received. Indirajith will contact you at ${email} shortly.`;
         contactForm.reset();
 
         if (submitBtn) {
